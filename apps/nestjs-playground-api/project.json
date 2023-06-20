@@ -1,0 +1,64 @@
+{
+  "name": "nestjs-playground-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nestjs-playground-api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/nestjs-playground-api",
+        "main": "apps/nestjs-playground-api/src/main.ts",
+        "tsConfig": "apps/nestjs-playground-api/tsconfig.app.json",
+        "assets": ["apps/nestjs-playground-api/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/nestjs-playground-api/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "nestjs-playground-api:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "nestjs-playground-api:build:development"
+        },
+        "production": {
+          "buildTarget": "nestjs-playground-api:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/nestjs-playground-api/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/nestjs-playground-api/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
