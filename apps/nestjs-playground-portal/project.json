@@ -1,25 +1,25 @@
 {
-  "name": "nestjs-playground",
+  "name": "nestjs-playground-portal",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "monorepo",
-  "sourceRoot": "apps/nestjs-playground/src",
+  "sourceRoot": "apps/nestjs-playground-portal/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/nestjs-playground",
-        "index": "apps/nestjs-playground/src/index.html",
-        "main": "apps/nestjs-playground/src/main.ts",
+        "outputPath": "dist/apps/nestjs-playground-portal",
+        "index": "apps/nestjs-playground-portal/src/index.html",
+        "main": "apps/nestjs-playground-portal/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/nestjs-playground/tsconfig.app.json",
+        "tsConfig": "apps/nestjs-playground-portal/tsconfig.app.json",
         "assets": [
-          "apps/nestjs-playground/src/favicon.ico",
-          "apps/nestjs-playground/src/assets"
+          "apps/nestjs-playground-portal/src/favicon.ico",
+          "apps/nestjs-playground-portal/src/assets"
         ],
-        "styles": ["apps/nestjs-playground/src/styles.scss"],
+        "styles": ["apps/nestjs-playground-portal/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -53,10 +53,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "nestjs-playground:build:production"
+          "browserTarget": "nestjs-playground-portal:build:production"
         },
         "development": {
-          "browserTarget": "nestjs-playground:build:development"
+          "browserTarget": "nestjs-playground-portal:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -64,7 +64,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "nestjs-playground:build"
+        "browserTarget": "nestjs-playground-portal:build"
       }
     },
     "lint": {
@@ -72,8 +72,8 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "apps/nestjs-playground/**/*.ts",
-          "apps/nestjs-playground/**/*.html"
+          "apps/nestjs-playground-portal/**/*.ts",
+          "apps/nestjs-playground-portal/**/*.html"
         ]
       }
     },
@@ -81,7 +81,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/nestjs-playground/jest.config.ts",
+        "jestConfig": "apps/nestjs-playground-portal/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -94,7 +94,7 @@
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "nestjs-playground:build"
+        "buildTarget": "nestjs-playground-portal:build"
       }
     }
   }

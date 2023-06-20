@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'nestjs-playground',
+  displayName: 'nestjs-playground-portal',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/nestjs-playground',
+  coverageDirectory: '../../coverage/apps/nestjs-playground-portal',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

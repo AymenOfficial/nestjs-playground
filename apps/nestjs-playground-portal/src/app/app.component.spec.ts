@@ -6,7 +6,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, NxWelcomeComponent, RouterTestingModule],
+      imports: [RouterTestingModule],
+      declarations: [AppComponent, NxWelcomeComponent],
     }).compileComponents();
   });
 
@@ -15,13 +16,13 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome nestjs-playground',
+      'Welcome nestjs-playground-portal'
     );
   });
 
-  it(`should have as title 'nestjs-playground'`, () => {
+  it(`should have as title 'nestjs-playground-portal'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('nestjs-playground');
+    expect(app.title).toEqual('nestjs-playground-portal');
   });
 });
