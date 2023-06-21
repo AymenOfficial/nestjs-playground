@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'monorepo-root',
+  selector: 'ah-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
